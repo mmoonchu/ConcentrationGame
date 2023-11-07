@@ -1,0 +1,50 @@
+Concentration (the 2-player card memorization game)
+
+
+HTML
+3x3 (?) grid
+    maybe: 54 divs for cards (6x9)
+Each div contains square image
+Each player's score, active player status
+    maybe: also cards won? ()
+
+
+JS
+SETUP:
+    maybe: Function for setting collection of pictures to be used 
+    maybe: Function for "hard mode" wherein cards move periodically
+    maybe: Function for variations (https://en.wikipedia.org/wiki/Concentration_(card_game))
+Create array of images
+    image class = {
+        name
+        imageID (corresponds to position in grid)
+        url
+
+        maybe: method for moving on screen
+    }
+Function: flip over (reveal) card
+Function: flip over (hide) card
+Function: (re)move card pair from pile
+Function: switch active player
+Function: checkWin
+    - textContent: active player wins!
+
+Function: win card pair
+    (re)move card pair()
+    active player score++
+    checkWin()
+Function: incorrect card pair
+    hide cards()
+    switch active player()
+
+BEGIN:
+Function: randomly assign images to divs
+Function: initiate active player's turn
+    Event listener('click'): flip function x2
+    if (win)
+        win card pair()
+    else
+        incorrect card pair()
+    
+
+    
