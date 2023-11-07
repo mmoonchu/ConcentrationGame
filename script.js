@@ -1,12 +1,3 @@
-// BEGIN:
-// Function: randomly assign images to divs
-// Function: initiate active player's turn
-//     Event listener('click'): flip function x2
-//     if (win)
-//         win card pair()
-//     else
-//         incorrect card pair()
-
 const images = [];
 class image {
     constructor(name, href, state = dormant) {
@@ -58,3 +49,25 @@ const failCardPair = function() {
     hideCards();
     switchPlayer();
 }
+
+// Function: randomly assign images to divs
+const assignImages = function() {
+    //TODO
+}
+// Function: initiate active player's turn
+const setActivePlayer = function(player) { // for both beginGame() & resetGame()
+    //TODO
+}
+
+// BEGIN:
+const beginGame = function() {
+    assignImages();
+    setActivePlayer(player1);
+}
+
+
+//     Event listener('click'): flip function x2
+//     if (win)
+//         win card pair()
+//     else
+//         fail card pair()
