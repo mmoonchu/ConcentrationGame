@@ -1,26 +1,3 @@
-// Create array of images
-//     image class = {
-//         name
-//         imageID (corresponds to position in grid)
-//         url
-
-//         maybe: method for moving on screen
-//     }
-// Function: flip over (reveal) card
-// Function: flip over (hide) card
-// Function: (re)move card pair from pile
-// Function: switch active player
-// Function: checkWin
-//     - textContent: active player wins!
-
-// Function: win card pair
-//     (re)move card pair()
-//     active player score++
-//     checkWin()
-// Function: incorrect card pair
-//     hide cards()
-//     switch active player()
-
 // BEGIN:
 // Function: randomly assign images to divs
 // Function: initiate active player's turn
@@ -32,15 +9,18 @@
 
 const images = [];
 class image {
-    constructor(name, href, active = true) {
+    constructor(name, href, state = dormant) {
         this.name = name,
         this.href = href
         this.gridID = images.indexOf(this), // gridID will double as shorthand for both its images index as well as its ID within the DOM
-        this.active = active
+        this.state = state
     }
-
     // maybe: method for moving on screen (difficulty)
 }
+// image state variables
+const dormant = -1;
+const selected = 1;
+const secured = 0;
 
 // Function: flip over (reveal) card
 const revealCard = function(cardName) {
@@ -49,7 +29,7 @@ const revealCard = function(cardName) {
 // Function: flip over (hide) card
 const hideCards = function() {
     images.forEach((image) => {
-        if (image.active === true) {
+        if (image.state === dormant) {
             // TODO
         }
     })
@@ -65,5 +45,16 @@ const switchPlayer = function() {
 // Function: checkWin
 const checkWin = function () {
     // TODO
-    //     - textContent: active player wins!
+    // - textContent: active player wins!
+}
+// Function: win card pair
+const winCardPair = function(cardName) {
+    removeCardPair(cardName);
+    // active player score++
+    checkWin();
+}
+// Function: incorrect card pair
+const failCardPair = function() {
+    hideCards();
+    switchPlayer();
 }
