@@ -8,6 +8,24 @@ class image {
     }
     // maybe: method for moving on screen (difficulty)
 }
+// create activeSet
+//     setClone = images.slice()
+//     setClone.forEach
+//         push random image to activeSet
+//         splice image out of setClone
+//         reduce randomInt() arg by 1
+const activeSet = [];
+const setActiveSet = function(set) {
+    let doubledSet = set.concat(set);
+    for (let i = 0, j = doubledSet.length; i < j; i++) {
+        let randomImageIndex = getRandomInt(doubledSet.length);
+        activeSet.push(doubledSet[randomImageIndex]);
+        doubledSet.splice(randomImageIndex, 1);
+    }
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 // image state variables
 const dormant = -1;
 const selected = 1;
@@ -54,11 +72,18 @@ const failCardPair = function() {
 const assignImages = function() {
     //TODO
 }
+//Function: create image divs
+const createBoard = function() {
+    images.forEach(image => {
+        // create div w/ id="gridID"
+    });
+}
 // Function: initiate active player's turn
 const setActivePlayer = function(player) { // for both beginGame() & resetGame()
     //TODO
 }
 
+////////////////////////////////////////////
 // BEGIN:
 const beginGame = function() {
     assignImages();

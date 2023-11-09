@@ -47,5 +47,20 @@ Function: initiate active player's turn
     else
         incorrect card pair()
     
-
     
+
+TODO:
+create activeSet
+    setClone = images.slice()
+    setClone.forEach
+        push random image to activeSet
+        splice image out of setClone
+        reduce randomInt() arg by 1
+put images on page
+    create div for every image in array
+        assign each div an image
+        show each div image
+    format
+create player objects
+    score, active
+    maybe: container for cards won
