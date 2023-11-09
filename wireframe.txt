@@ -61,6 +61,10 @@ put images on page
         assign each div an image
         show each div image
     format
+
+    AKA:
+    assignImages() (?)
+    createBoard()
 create player objects
     score, active
     maybe: container for cards won

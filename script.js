@@ -1,8 +1,8 @@
 const images = [];
 class image {
-    constructor(name, href, state = dormant) {
+    constructor(name, link, state = dormant) {
         this.name = name,
-        this.href = href
+        this.link = link,
         this.gridID = images.indexOf(this), // gridID will double as shorthand for both its images index as well as its ID within the DOM
         this.state = state
     }
@@ -22,6 +22,9 @@ const setActiveSet = function(set) {
         activeSet.push(doubledSet[randomImageIndex]);
         doubledSet.splice(randomImageIndex, 1);
     }
+    activeSet.forEach(image => {
+        image.gridID = activeSet.indexOf(this);
+    });
 }
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -68,14 +71,17 @@ const failCardPair = function() {
     switchPlayer();
 }
 
-// Function: randomly assign images to divs
+// Function: randomly assign images to divs (may not need)
 const assignImages = function() {
     //TODO
 }
 //Function: create image divs
 const createBoard = function() {
-    images.forEach(image => {
-        // create div w/ id="gridID"
+    activeSet.forEach((image) => {
+        let newDiv = document.createElement(`div`);
+        newDiv.id = `grid${image.gridID}`;
+        newDiv.innerHTML = `<img src="${image.link} />"`
+        document.querySelector('#board').append(newDiv);
     });
 }
 // Function: initiate active player's turn
