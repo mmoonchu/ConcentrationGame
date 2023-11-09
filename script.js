@@ -82,13 +82,12 @@ const assignImages = function() {
 }
 //Function: create image divs
 const createBoard = function() {
-    let divCounter = 0;
     activeSet.forEach((image) => {
         let newDiv = document.createElement(`div`);
-        newDiv.id = `grid${divCounter}`;
-        newDiv.innerHTML = `<img src="${image.link}" />`
+        newDiv.id = `grid${image.gridID}`;
+        newDiv.classList.add('card', 'facedown')
+        newDiv.innerHTML = `<img src="${image.link}" />`;
         document.querySelector('#board').append(newDiv);
-        divCounter++;
     });
 }
 // Function: initiate active player's turn
@@ -112,4 +111,4 @@ const beginGame = function() {
 //     else
 //         fail card pair()
 
-// beginGame();
+beginGame();

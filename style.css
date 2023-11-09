@@ -6,6 +6,7 @@ body {
     background: content-box radial-gradient(limegreen, green);
     min-height: 100vh;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
     /* overflow: hidden; */
@@ -14,4 +15,34 @@ body {
 header {
     font-family: cursive;
     font-size: 4rem;
+    margin: 1rem auto;
+}
+
+#board {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.card {
+    background-color: white;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.facedown {
+
+}
+
+#scores {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5rem auto;
 }
