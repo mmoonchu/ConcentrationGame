@@ -3,36 +3,41 @@ class image {
     constructor(name, link, state = dormant) {
         this.name = name,
         this.link = link,
-        this.gridID = images.indexOf(this), // gridID will double as shorthand for both its images index as well as its ID within the DOM
+        this.gridID = 0, // gridID will double as shorthand for both its images index as well as its ID within the DOM
         this.state = state
     }
     // maybe: method for moving on screen (difficulty)
-}
-// create activeSet
-//     setClone = images.slice()
-//     setClone.forEach
-//         push random image to activeSet
-//         splice image out of setClone
-//         reduce randomInt() arg by 1
-const activeSet = [];
-const setActiveSet = function(set) {
-    let doubledSet = set.concat(set);
-    for (let i = 0, j = doubledSet.length; i < j; i++) {
-        let randomImageIndex = getRandomInt(doubledSet.length);
-        activeSet.push(doubledSet[randomImageIndex]);
-        doubledSet.splice(randomImageIndex, 1);
-    }
-    activeSet.forEach(image => {
-        image.gridID = activeSet.indexOf(this);
-    });
-}
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
 }
 // image state variables
 const dormant = -1;
 const selected = 1;
 const secured = 0;
+
+const animals = [
+    new image('giraffe', '/image-sets/animals/giraffe.jpg'),
+    new image('lion', '/image-sets/animals/lion.jpg')
+];
+
+const activeSet = [];
+const setActiveSet = function(set) {
+    let doubledSet = [];
+    set.forEach((image) => {
+        doubledSet.push(image, Object.assign(Object.create(image), image))
+    })
+    for (let i = 0, j = doubledSet.length; i < j; i++) {
+        let randomImageIndex = getRandomInt(doubledSet.length);
+        activeSet.push(doubledSet[randomImageIndex]);
+        doubledSet.splice(randomImageIndex, 1);
+    }
+    activeSet.forEach((image, index) => {
+        image.gridID = index;
+    });
+    return activeSet;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
 // Function: flip over (reveal) card
 const revealCard = function(cardName) {
@@ -77,11 +82,13 @@ const assignImages = function() {
 }
 //Function: create image divs
 const createBoard = function() {
+    let divCounter = 0;
     activeSet.forEach((image) => {
         let newDiv = document.createElement(`div`);
-        newDiv.id = `grid${image.gridID}`;
-        newDiv.innerHTML = `<img src="${image.link} />"`
+        newDiv.id = `grid${divCounter}`;
+        newDiv.innerHTML = `<img src="${image.link}" />`
         document.querySelector('#board').append(newDiv);
+        divCounter++;
     });
 }
 // Function: initiate active player's turn
@@ -92,6 +99,8 @@ const setActivePlayer = function(player) { // for both beginGame() & resetGame()
 ////////////////////////////////////////////
 // BEGIN:
 const beginGame = function() {
+    setActiveSet(animals);
+    createBoard();
     assignImages();
     setActivePlayer(player1);
 }
@@ -102,3 +111,5 @@ const beginGame = function() {
 //         win card pair()
 //     else
 //         fail card pair()
+
+// beginGame();
