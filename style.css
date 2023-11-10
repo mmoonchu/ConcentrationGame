@@ -32,9 +32,11 @@ img {
 
 .card {
     background-color: white;
-    margin: 10px;
+    margin: 9px;
+    padding: 3px;
     width: 100px;
     height: 100px;
+    transform-style: preserve-3d;
 }
 
 .facedown {

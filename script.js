@@ -40,8 +40,15 @@ function getRandomInt(max) {
 }
 
 // Function: flip over (reveal) card
-const revealCard = function(cardName) {
+const updateClickableCards = function() {
+    const facedownCards = [...document.querySelectorAll('.facedown')]
+    facedownCards.forEach((card) => {
+        card.addEventListener('click', () => revealCard(card.id))
+    })
+}
+const revealCard = function(gridID) {
     // TODO
+    document.querySelector(`#${gridID}`).classList.toggle('flipUp');
 }
 // Function: flip over (hide) card
 const hideCards = function() {
@@ -76,18 +83,29 @@ const failCardPair = function() {
     switchPlayer();
 }
 
-// Function: randomly assign images to divs (may not need)
-const assignImages = function() {
+// Function: assign images to divs (may not need)
+const createCardFace = function(image) {
     //TODO
+    let cardFaceDiv = document.createElement(`div`);
+    cardFaceDiv.id = `grid${image.gridID}`;
+    cardFaceDiv.classList.add('card', 'facedown');
+    cardFaceDiv.innerHTML = `<img src="${image.link}" />`;
+    return cardFaceDiv;
+}
+//Function: containerize image for board
+const containerizeImage = function(cardFace) {
+    let cardContainer = document.createElement(`div`);
+    let card = document.createElement(`div`);
+    let cardBack = document.createElement(`div`);
+    card.append(cardFace, cardBack);
+    cardContainer.append(card);
+    return cardContainer;
 }
 //Function: create image divs
 const createBoard = function() {
     activeSet.forEach((image) => {
-        let newDiv = document.createElement(`div`);
-        newDiv.id = `grid${image.gridID}`;
-        newDiv.classList.add('card', 'facedown')
-        newDiv.innerHTML = `<img src="${image.link}" />`;
-        document.querySelector('#board').append(newDiv);
+        const card = containerizeImage(createCardFace(image));
+        document.querySelector('#board').append(card);
     });
 }
 // Function: initiate active player's turn
@@ -100,7 +118,6 @@ const setActivePlayer = function(player) { // for both beginGame() & resetGame()
 const beginGame = function() {
     setActiveSet(animals);
     createBoard();
-    assignImages();
     setActivePlayer(player1);
 }
 

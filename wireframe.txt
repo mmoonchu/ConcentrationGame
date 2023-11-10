@@ -68,3 +68,11 @@ put images on page
 create player objects
     score, active
     maybe: container for cards won
+
+
+add event listeners to cards
+    flip over
+    flip back down after 2
+
+laaater (but before stretch) (like bugfixes):
+updateClickableCards(): should also toggle off clickability for faceup cards
