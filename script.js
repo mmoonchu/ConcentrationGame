@@ -1,17 +1,17 @@
 const images = [];
 class image {
-    constructor(name, link, state = dormant) {
+    constructor(name, link) {
         this.name = name,
         this.link = link,
-        this.gridID = 0, // gridID will double as shorthand for both its images index as well as its ID within the DOM
-        this.state = state
+        this.gridID = 0 // gridID will double as shorthand for both its images index as well as its ID within the DOM
+        // this.state = state
     }
     // maybe: method for moving on screen (difficulty)
 }
 // image state variables
-const dormant = -1;
-const selected = 1;
-const secured = 0;
+// const dormant = -1;
+// const selected = 1;
+// const secured = 0;
 
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
@@ -47,25 +47,32 @@ const updateClickableCards = function() {
     // })
     const facedownCards = [...document.querySelectorAll('.face-down')]
     facedownCards.forEach((card) => {
-        // if (!(card.getAttribute('listener') === 'true')) {
             card.addEventListener('click', () => {
-                revealCard(card.id);
+                flipCard(card.id);
             })
-            card.setAttribute('listener', 'true'); // edit this
-        // }
+            card.setAttribute('state', 'dormant'); // edit this
     })
 }
-const revealCard = function(gridID) {
+const flipCard = function(gridID) {
     // TODO
     console.log(`clicked`);
     card = document.querySelector(`#${gridID}`);
-    if (card.getAttribute('listener') === 'true') {
-        card.classList.toggle('face-down');
-        card.classList.toggle('face-up');
-        card.setAttribute('listener', 'false');
-        console.log(`made false`);
+    if (card.getAttribute('state') === 'dormant') {
+        flipUp(card);
+    } else if (card.getAttribute('state') === 'selected') {
+        flipDown(card);
     }
     // updateClickableCards();
+}
+function flipUp(card) {
+    card.classList.toggle('face-down'); // probably don't need these
+    card.classList.toggle('face-up'); // probably don't need these
+    card.setAttribute('state', 'selected');
+}
+function flipDown(card) {
+    card.classList.toggle('face-down'); // probably don't need these
+    card.classList.toggle('face-up'); // probably don't need these
+    card.setAttribute('state', 'dormant');
 }
 // Function: flip over (hide) card
 const hideCards = function() {
