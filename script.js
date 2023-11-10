@@ -87,16 +87,21 @@ const failCardPair = function() {
 const createCardFace = function(image) {
     //TODO
     let cardFaceDiv = document.createElement(`div`);
-    cardFaceDiv.id = `grid${image.gridID}`;
-    cardFaceDiv.classList.add('card', 'facedown');
+    cardFaceDiv.classList.add('card-front');
+    cardFaceDiv.id = `${image.gridID}`;
     cardFaceDiv.innerHTML = `<img src="${image.link}" />`;
     return cardFaceDiv;
 }
 //Function: containerize image for board
 const containerizeImage = function(cardFace) {
     let cardContainer = document.createElement(`div`);
+        cardContainer.classList.add('card-container');
+        cardContainer.id = `grid${cardFace.id}`;
     let card = document.createElement(`div`);
+        card.classList.add('card');
     let cardBack = document.createElement(`div`);
+        cardBack.classList.add('card-back');
+        cardBack.innerText = `back`;
     card.append(cardFace, cardBack);
     cardContainer.append(card);
     return cardContainer;
