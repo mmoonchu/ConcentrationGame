@@ -56,6 +56,9 @@ const flipCard = function(gridID) {
     } else if (card.getAttribute('state') === 'selected') {
         flipDown(card);
     }
+    const selectedCards = document.querySelectorAll('div[state="selected"');
+    console.log(selectedCards);
+
     function flipUp(card) {
         card.classList.toggle('face-down');
         card.classList.toggle('face-up');
