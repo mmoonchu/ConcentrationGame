@@ -56,17 +56,16 @@ const flipCard = function(gridID) {
     } else if (card.getAttribute('state') === 'selected') {
         flipDown(card);
     }
-    // updateClickableCards();
-}
-function flipUp(card) {
-    card.classList.toggle('face-down');
-    card.classList.toggle('face-up');
-    card.setAttribute('state', 'selected');
-}
-function flipDown(card) {
-    card.classList.toggle('face-down');
-    card.classList.toggle('face-up');
-    card.setAttribute('state', 'dormant');
+    function flipUp(card) {
+        card.classList.toggle('face-down');
+        card.classList.toggle('face-up');
+        card.setAttribute('state', 'selected');
+    }
+    function flipDown(card) {
+        card.classList.toggle('face-down');
+        card.classList.toggle('face-up');
+        card.setAttribute('state', 'dormant');
+    }
 }
 // Function: flip over (hide) card
 const hideCards = function() {
