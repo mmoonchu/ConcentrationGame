@@ -46,6 +46,7 @@ img {
 .card-container {
     width: 300px;
     height: 400px;
+    perspective: 2700px;
 }
 .card {
     width: 100%;
@@ -53,7 +54,7 @@ img {
     transition: transform 1s;
 }
 
-.card-container:hover .card {
+.card-container.face-up .card {
     transform: rotateY(180deg);
 }
 .card-front, .card-back {
@@ -65,11 +66,11 @@ img {
 .card-front {
     background-color: #333;
     color: #fff;
+    transform: rotateY(180deg);
 }
 .card-back {
     background-color: #517fa4;
     color: #fff;
-    transform: rotateY(180deg);
 }
 
 .facedown {

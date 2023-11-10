@@ -41,14 +41,31 @@ function getRandomInt(max) {
 
 // Function: flip over (reveal) card
 const updateClickableCards = function() {
-    const facedownCards = [...document.querySelectorAll('.facedown')]
+    // const allCards = [...document.querySelectorAll('.card-container')]
+    // allCards.forEach((card) => {
+    //     card.removeEventListener('click', () => revealCard(card.id))
+    // })
+    const facedownCards = [...document.querySelectorAll('.face-down')]
     facedownCards.forEach((card) => {
-        card.addEventListener('click', () => revealCard(card.id))
+        // if (!(card.getAttribute('listener') === 'true')) {
+            card.addEventListener('click', () => {
+                revealCard(card.id);
+            })
+            card.setAttribute('listener', 'true'); // edit this
+        // }
     })
 }
 const revealCard = function(gridID) {
     // TODO
-    document.querySelector(`#${gridID}`).classList.toggle('flipUp');
+    console.log(`clicked`);
+    card = document.querySelector(`#${gridID}`);
+    if (card.getAttribute('listener') === 'true') {
+        card.classList.toggle('face-down');
+        card.classList.toggle('face-up');
+        card.setAttribute('listener', 'false');
+        console.log(`made false`);
+    }
+    // updateClickableCards();
 }
 // Function: flip over (hide) card
 const hideCards = function() {
@@ -95,7 +112,7 @@ const createCardFace = function(image) {
 //Function: containerize image for board
 const containerizeImage = function(cardFace) {
     let cardContainer = document.createElement(`div`);
-        cardContainer.classList.add('card-container');
+        cardContainer.classList.add('card-container', 'face-down');
         cardContainer.id = `grid${cardFace.id}`;
     let card = document.createElement(`div`);
         card.classList.add('card');
@@ -123,9 +140,10 @@ const setActivePlayer = function(player) { // for both beginGame() & resetGame()
 const beginGame = function() {
     setActiveSet(animals);
     createBoard();
-    setActivePlayer(player1);
+    // setActivePlayer(player1);
+    updateClickableCards();
 }
-
+// updateClickableCards();
 
 //     Event listener('click'): flip function x2
 //     if (win)

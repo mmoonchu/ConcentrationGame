@@ -11,7 +11,7 @@ Each player's score, active player status
 
 JS
 SETUP:
-    maybe: animation for winning a pair
+    maybe: animation for winning a pair (spins more)
     maybe: Function for setting collection of pictures to be used 
     maybe: Function for "hard mode" wherein cards move periodically
     maybe: Function for variations (https://en.wikipedia.org/wiki/Concentration_(card_game))
