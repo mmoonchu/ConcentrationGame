@@ -3,15 +3,9 @@ class image {
     constructor(name, link) {
         this.name = name,
         this.link = link,
-        this.gridID = 0 // gridID will double as shorthand for both its images index as well as its ID within the DOM
-        // this.state = state
     }
     // maybe: method for moving on screen (difficulty)
 }
-// image state variables
-// const dormant = -1;
-// const selected = 1;
-// const secured = 0;
 
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
@@ -39,7 +33,6 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-// Function: flip over (reveal) card
 const updateClickableCards = function() {
     // const allCards = [...document.querySelectorAll('.card-container')]
     // allCards.forEach((card) => {
@@ -50,7 +43,7 @@ const updateClickableCards = function() {
             card.addEventListener('click', () => {
                 flipCard(card.id);
             })
-            card.setAttribute('state', 'dormant'); // edit this
+            card.setAttribute('state', 'dormant');
     })
 }
 const flipCard = function(gridID) {
@@ -65,13 +58,13 @@ const flipCard = function(gridID) {
     // updateClickableCards();
 }
 function flipUp(card) {
-    card.classList.toggle('face-down'); // probably don't need these
-    card.classList.toggle('face-up'); // probably don't need these
+    card.classList.toggle('face-down');
+    card.classList.toggle('face-up');
     card.setAttribute('state', 'selected');
 }
 function flipDown(card) {
-    card.classList.toggle('face-down'); // probably don't need these
-    card.classList.toggle('face-up'); // probably don't need these
+    card.classList.toggle('face-down');
+    card.classList.toggle('face-up');
     card.setAttribute('state', 'dormant');
 }
 // Function: flip over (hide) card
