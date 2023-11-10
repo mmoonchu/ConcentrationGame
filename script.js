@@ -67,14 +67,6 @@ const flipCard = function(gridID) {
         card.setAttribute('state', 'dormant');
     }
 }
-// Function: flip over (hide) card
-const hideCards = function() {
-    images.forEach((image) => {
-        if (image.state === dormant) {
-            // TODO
-        }
-    })
-}
 // Function: (re)move card pair from pile
 const removeCardPair = function(cardName) {
     // TODO
