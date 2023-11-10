@@ -29,48 +29,50 @@ header {
 }
 
 img {
-    width: 100px;
-    height: 100px;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
 }
 
-.card {
-    background-color: white;
+.card-container {
     margin: 9px;
     padding: 3px;
-    width: 100px;
-    height: 100px;
-    transform-style: preserve-3d;
-}
-
-.card-container {
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     perspective: 2700px;
 }
 .card {
     width: 100%;
     height: 100%;
     transition: transform 1s;
+    transform-style: preserve-3d;
 }
 
 .card-container.face-up .card {
     transform: rotateY(180deg);
 }
 .card-front, .card-back {
+    background-color: white;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 .card-front {
-    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     transform: rotateY(180deg);
 }
 .card-back {
-    background-color: #517fa4;
-    color: #fff;
+    background-image: url('/image-sets/animals/cardback-zoo.png');
+    background-color: #d9ff96;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    padding: 20%;
 }
 
 .facedown {

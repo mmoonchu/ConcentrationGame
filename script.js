@@ -118,7 +118,6 @@ const containerizeImage = function(cardFace) {
         card.classList.add('card');
     let cardBack = document.createElement(`div`);
         cardBack.classList.add('card-back');
-        cardBack.innerText = `back`;
     card.append(cardFace, cardBack);
     cardContainer.append(card);
     return cardContainer;
