@@ -3,6 +3,7 @@ class image {
     constructor(name, link) {
         this.name = name,
         this.link = link,
+        this.gridID = 0 // gridID will double as shorthand for both its images index as well as its ID within the DOM
     }
     // maybe: method for moving on screen (difficulty)
 }
