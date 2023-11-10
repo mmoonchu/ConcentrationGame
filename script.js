@@ -105,15 +105,17 @@ const createCardFace = function(image) {
     //TODO
     let cardFaceDiv = document.createElement(`div`);
     cardFaceDiv.classList.add('card-front');
-    cardFaceDiv.id = `${image.gridID}`;
+    cardFaceDiv.id = `${image.gridID}`; // could refactor to eliminate gridID within face
+    cardFaceDiv.setAttribute('name', `${image.name}`);
     cardFaceDiv.innerHTML = `<img src="${image.link}" />`;
     return cardFaceDiv;
 }
 //Function: containerize image for board
 const containerizeImage = function(cardFace) {
     let cardContainer = document.createElement(`div`);
-        cardContainer.classList.add('card-container', 'face-down');
         cardContainer.id = `grid${cardFace.id}`;
+        cardContainer.classList.add('card-container', 'face-down');
+        cardContainer.setAttribute('name', `${cardFace.getAttribute('name')}`);
     let card = document.createElement(`div`);
         card.classList.add('card');
     let cardBack = document.createElement(`div`);
