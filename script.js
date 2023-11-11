@@ -72,11 +72,13 @@ const flipCard = function(gridID) {
             selectedCards.forEach((card) => {
                 card.setAttribute('state', 'secured');
             })
-            scores[activePlayer++];
+            scores[activePlayer]++;
+            document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer]
         } else {
             selectedCards.forEach((card) => {
                 setTimeout(() => {flipDown(card)}, turnTimeoutValue);
             })
+            switchPlayer();
         }
         const allCards = [...document.querySelectorAll('.card-container')];
         allCards.forEach((card) => {
