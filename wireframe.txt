@@ -15,6 +15,7 @@ SETUP:
     maybe: Function for setting collection of pictures to be used 
         setting cardBack within JS
     maybe: Function for "hard mode" wherein cards move periodically
+    maybe: redo flipCard() pair validation to allow multi-card validation (instead of being limited to pairs)
     maybe: Function for variations (https://en.wikipedia.org/wiki/Concentration_(card_game))
 Create array of images
     image class = {
