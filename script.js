@@ -95,6 +95,8 @@ const removeCardPair = function(cardName) {
 // Function: switch active player
 const switchPlayer = function() {
     // TODO
+    document.querySelector('#p0').classList.toggle('player--active');
+    document.querySelector('#p1').classList.toggle('player--active');
 }
 // Function: checkWin
 const checkWin = function () {
