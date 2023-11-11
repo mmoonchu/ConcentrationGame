@@ -91,3 +91,6 @@ img {
     height: auto;
     margin: auto;
 }
+.player--active {
+    background-color: aquamarine;
+}
