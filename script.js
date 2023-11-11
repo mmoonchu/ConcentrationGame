@@ -5,6 +5,9 @@ class image {
         this.link = link,
         this.gridID = 0 // gridID will double as shorthand for both its images index as well as its ID within the DOM
     }
+    flipCard_() {
+        flipCard(this.id);
+    }
     // maybe: method for moving on screen (difficulty)
 }
 
@@ -41,15 +44,14 @@ const updateClickableCards = function() {
     // })
     const facedownCards = [...document.querySelectorAll('.face-down')]
     facedownCards.forEach((card) => {
-            card.addEventListener('click', () => {
-                flipCard(card.id);
-            })
-            card.setAttribute('state', 'dormant');
+        const cardIndex = card.id.replace('grid', '');
+        card.addEventListener('click', activeSet[cardIndex].flipCard_);
+        card.setAttribute('state', 'dormant');
     })
 }
 const flipCard = function(gridID) {
     // TODO
-    console.log(`clicked`);
+    console.log(gridID);
     card = document.querySelector(`#${gridID}`);
     if (card.getAttribute('state') === 'dormant') {
         flipUp(card);
@@ -61,12 +63,19 @@ const flipCard = function(gridID) {
         // maybe: remake this part to allow multi-card validation 
         // win pair if matching
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
-            // console.log(selectedCards[0].getAttribute('name'));
+            // win pair
         } else {
             selectedCards.forEach((card) => {
                 setTimeout(() => {flipDown(card)}, 1000);
             })
         }
+        const allCards = [...document.querySelectorAll('.card-container')];
+        console.log(allCards);
+        allCards.forEach((card) => {
+            const cardIndex = card.id.replace('grid', '');
+            card.removeEventListener('click', activeSet[cardIndex].flipCard_);
+            console.log(card);
+        })
     }
 
     function flipUp(card) {
