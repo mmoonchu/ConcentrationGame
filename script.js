@@ -95,8 +95,8 @@ const removeCardPair = function(cardName) {
 }
 // Function: switch active player
 const switchPlayer = function() {
-    document.querySelector('#p0').classList.toggle('player--active');
-    document.querySelector('#p1').classList.toggle('player--active');
+    document.querySelector('#player-0').classList.toggle('player--active');
+    document.querySelector('#player-1').classList.toggle('player--active');
 }
 // Function: checkWin
 const checkWin = function () {
@@ -147,8 +147,8 @@ const createBoard = function() {
 }
 // Function: initiate active player's turn
 const setFirstPlayer = function() { // for both beginGame() & resetGame()
-    document.querySelector('#p0').classList.add('player--active');
-    document.querySelector('#p1').classList.remove('player--active');
+    document.querySelector('#player-0').classList.add('player--active');
+    document.querySelector('#player-1').classList.remove('player--active');
 }
 
 ////////////////////////////////////////////
