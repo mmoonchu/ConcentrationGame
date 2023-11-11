@@ -57,8 +57,6 @@ const updateClickableCards = function() {
     })
 }
 const flipCard = function(gridID) {
-    // TODO
-    console.log(gridID);
     card = document.querySelector(`#${gridID}`);
     if (card.getAttribute('state') === 'dormant') {
         flipUp(card);
@@ -72,10 +70,7 @@ const flipCard = function(gridID) {
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
             winCardPair(selectedCards);
         } else {
-            selectedCards.forEach((card) => {
-                setTimeout(() => {flipDown(card)}, turnTimeoutValue);
-            })
-            switchPlayer();
+            failCardPair(selectedCards);
         }
         const allCards = [...document.querySelectorAll('.card-container')];
         allCards.forEach((card) => {
@@ -123,8 +118,10 @@ const winCardPair = function(selectedCards) {
     checkWin();
 }
 // Function: incorrect card pair
-const failCardPair = function() {
-    hideCards();
+const failCardPair = function(selectedCards) {
+    selectedCards.forEach((card) => {
+        setTimeout(() => {flipDown(card)}, turnTimeoutValue);
+    })
     switchPlayer();
 }
 
