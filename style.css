@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: content-box radial-gradient(limegreen, green);
+    background: content-box radial-gradient(rgb(103, 233, 103), rgb(7, 161, 7));
     width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -21,6 +21,14 @@ header {
     font-size: 4rem;
     margin: 1rem auto;
 }
+.text-outline {
+    color: #000;
+    text-shadow:
+      -.8px -.8px 0 #f0872b, /* Top-left shadow */
+      .8px -.8px 0 #f0872b,  /* Top-right shadow */
+      -2.7px 2.7px 0 #f0872b,  /* Bottom-left shadow */
+      .8px .8px 0 #f0872b;   /* Bottom-right shadow */
+  }
 
 #board {
     display: flex;
