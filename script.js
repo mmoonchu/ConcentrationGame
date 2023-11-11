@@ -60,8 +60,9 @@ const flipCard = function(gridID) {
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
             // console.log(selectedCards[0].getAttribute('name'));
         } else {
+        // flip down if not
             selectedCards.forEach((card) => {
-                setTimeout(() => {flipDown(card)}, 1000);
+                // console.log(card);
             })
         }
         const allCards = [...document.querySelectorAll('.card-container')];
