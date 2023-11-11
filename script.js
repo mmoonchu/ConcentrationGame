@@ -72,6 +72,7 @@ const flipCard = function(gridID) {
             selectedCards.forEach((card) => {
                 card.setAttribute('state', 'secured');
             })
+            scores[activePlayer++];
         } else {
             selectedCards.forEach((card) => {
                 setTimeout(() => {flipDown(card)}, turnTimeoutValue);
@@ -104,6 +105,7 @@ const removeCardPair = function(cardName) {
 const switchPlayer = function() {
     document.querySelector('#player-0').classList.toggle('player--active');
     document.querySelector('#player-1').classList.toggle('player--active');
+    activePlayer = activePlayer === 0 ? 1 : 0;
 }
 // Function: checkWin
 const checkWin = function () {
