@@ -10,6 +10,7 @@ class image {
     }
     // maybe: method for moving on screen (difficulty)
 }
+let turnTimeout = 1000;
 
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
@@ -62,14 +63,14 @@ const flipCard = function(gridID) {
             // win pair
         } else {
             selectedCards.forEach((card) => {
-                setTimeout(() => {flipDown(card)}, 1000);
+                setTimeout(() => {flipDown(card)}, turnTimeout);
             })
         }
         const allCards = [...document.querySelectorAll('.card-container')];
         allCards.forEach((card) => {
             const cardIndex = card.id.replace('grid', '');
             card.removeEventListener('click', activeSet[cardIndex].flipCard_);
-            setTimeout(updateClickableCards, 1000);
+            setTimeout(updateClickableCards, turnTimeout);
         })
     }
 
