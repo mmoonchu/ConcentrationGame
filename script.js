@@ -145,8 +145,10 @@ const createBoard = function() {
     });
 }
 // Function: initiate active player's turn
-const setActivePlayer = function(player) { // for both beginGame() & resetGame()
+const setFirstPlayer = function() { // for both beginGame() & resetGame()
     //TODO
+    document.querySelector('#p0').classList.add('player--active');
+    document.querySelector('#p1').classList.remove('player--active');
 }
 
 ////////////////////////////////////////////
@@ -154,7 +156,7 @@ const setActivePlayer = function(player) { // for both beginGame() & resetGame()
 const beginGame = function() {
     setActiveSet(animals);
     createBoard();
-    // setActivePlayer(player1);
+    setFirstPlayer();
     updateClickableCards();
 }
 // updateClickableCards();
