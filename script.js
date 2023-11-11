@@ -123,6 +123,15 @@ const switchPlayer = function() {
 // Function: checkWin
 const checkWin = function () {
     // TODO
+    if (![...document.querySelectorAll('div[state="dormant"')][0] && ![...document.querySelectorAll('div[state="selected"')][0]) {
+        if (scores[0] > scores[1]) {
+            console.log(`Player 1 wins!`);
+        } else if (scores[0] < scores[1]) {
+            console.log(`Player 2 wins!`);
+        } else {
+            console.log(`It's a tie!`);
+        }
+    }
     // - textContent: active player wins!
 }
 
