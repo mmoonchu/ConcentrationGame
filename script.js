@@ -1,25 +1,20 @@
-const player0El = document.querySelector('#player-0');
-const player1El = document.querySelector('#player-1');
-const score0El = document.querySelector('#score-0');
-const score1El = document.querySelector('#score-1');
-
-const scores = [0, 0];
-let activePlayer = 0;
-let playing = true;
-
-let turnTimeoutValue = 1000;
-
+const images = [];
 class image {
     constructor(name, link) {
         this.name = name,
         this.link = link,
-        this.gridID = 0
+        this.gridID = 0 // gridID will double as shorthand for both its images index as well as its ID within the DOM
     }
     flipCard_() {
         flipCard(this.id);
     }
     // maybe: method for moving on screen (difficulty)
 }
+let turnTimeoutValue = 1000;
+const scores = [0, 0];
+let activePlayer = 0;
+let playing = true;
+
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
     new image('lion', '/image-sets/animals/lion.jpg')
