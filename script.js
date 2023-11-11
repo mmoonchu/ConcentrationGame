@@ -72,14 +72,9 @@ const flipCard = function(gridID) {
         } else {
             failCardPair(selectedCards);
         }
-        const allCards = [...document.querySelectorAll('.card-container')];
-        allCards.forEach((card) => {
-            const cardIndex = card.id.replace('grid', '');
-            card.removeEventListener('click', activeSet[cardIndex].flipCard_);
-            setTimeout(updateClickableCards, turnTimeoutValue);
-        })
+        resetFlipCardListeners();
     }
-
+/////////////////////////////////////////
     function flipUp(card) {
         card.classList.toggle('face-down');
         card.classList.toggle('face-up');
@@ -90,7 +85,34 @@ const flipCard = function(gridID) {
         card.classList.toggle('face-up');
         card.setAttribute('state', 'dormant');
     }
+    // Function: win card pair
+    function winCardPair(selectedCards) {
+        selectedCards.forEach((card) => {
+            card.setAttribute('state', 'secured');
+        })
+        scores[activePlayer]++;
+        document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer]
+        // removeCardPair(cardName);
+        // active player score++
+        checkWin();
+    }
+    // Function: incorrect card pair
+    function failCardPair(selectedCards) {
+        selectedCards.forEach((card) => {
+            setTimeout(() => {flipDown(card)}, turnTimeoutValue);
+        })
+        switchPlayer();
+    }
+    function resetFlipCardListeners() {
+        const allCards = [...document.querySelectorAll('.card-container')];
+        allCards.forEach((card) => {
+            const cardIndex = card.id.replace('grid', '');
+            card.removeEventListener('click', activeSet[cardIndex].flipCard_);
+            setTimeout(updateClickableCards, turnTimeoutValue);
+        })
+    }
 }
+
 // Function: (re)move card pair from pile
 const removeCardPair = function(cardName) {
     // TODO
@@ -106,24 +128,7 @@ const checkWin = function () {
     // TODO
     // - textContent: active player wins!
 }
-// Function: win card pair
-const winCardPair = function(selectedCards) {
-    selectedCards.forEach((card) => {
-        card.setAttribute('state', 'secured');
-    })
-    scores[activePlayer]++;
-    document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer]
-    // removeCardPair(cardName);
-    // active player score++
-    checkWin();
-}
-// Function: incorrect card pair
-const failCardPair = function(selectedCards) {
-    selectedCards.forEach((card) => {
-        setTimeout(() => {flipDown(card)}, turnTimeoutValue);
-    })
-    switchPlayer();
-}
+
 
 // Function: assign images to divs (may not need)
 const createCardFace = function(image) {
