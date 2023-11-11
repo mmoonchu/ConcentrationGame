@@ -11,7 +11,9 @@ class image {
     // maybe: method for moving on screen (difficulty)
 }
 let turnTimeoutValue = 1000;
-const scores = [];
+const scores = [0, 0];
+let activePlayer = 0;
+let playing = true;
 
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
