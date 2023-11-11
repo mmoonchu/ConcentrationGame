@@ -85,7 +85,6 @@ const flipCard = function(gridID) {
         card.classList.toggle('face-up');
         card.setAttribute('state', 'dormant');
     }
-    // Function: win card pair
     function winCardPair(selectedCards) {
         selectedCards.forEach((card) => {
             card.setAttribute('state', 'secured');
@@ -96,7 +95,6 @@ const flipCard = function(gridID) {
         // active player score++
         checkWin();
     }
-    // Function: incorrect card pair
     function failCardPair(selectedCards) {
         selectedCards.forEach((card) => {
             setTimeout(() => {flipDown(card)}, turnTimeoutValue);
@@ -117,7 +115,6 @@ const flipCard = function(gridID) {
 const removeCardPair = function(cardName) {
     // TODO
 }
-// Function: switch active player
 const switchPlayer = function() {
     document.querySelector('#player-0').classList.toggle('player--active');
     document.querySelector('#player-1').classList.toggle('player--active');
@@ -130,7 +127,6 @@ const checkWin = function () {
 }
 
 
-// Function: assign images to divs (may not need)
 const createCardFace = function(image) {
     let cardFaceDiv = document.createElement(`div`);
     cardFaceDiv.classList.add('card-front');
@@ -139,7 +135,6 @@ const createCardFace = function(image) {
     cardFaceDiv.innerHTML = `<img src="${image.link}" />`;
     return cardFaceDiv;
 }
-//Function: containerize image for board
 const containerizeImage = function(cardFace) {
     let cardContainer = document.createElement(`div`);
         cardContainer.id = `grid${cardFace.id}`;
@@ -153,15 +148,13 @@ const containerizeImage = function(cardFace) {
     cardContainer.append(card);
     return cardContainer;
 }
-//Function: create image divs
-const createBoard = function() {
+const createBoard = function() { // could move above functions into this one
     activeSet.forEach((image) => {
         const card = containerizeImage(createCardFace(image));
         document.querySelector('#board').append(card);
     });
 }
-// Function: initiate active player's turn
-const setFirstPlayer = function() { // for both beginGame() & resetGame()
+const setFirstPlayer = function() {
     document.querySelector('#player-0').classList.add('player--active');
     document.querySelector('#player-1').classList.remove('player--active');
 }
