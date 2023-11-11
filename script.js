@@ -55,7 +55,7 @@ const flipCard = function(gridID) {
     }
     const selectedCards = [...document.querySelectorAll('div[state="selected"')];
     if (selectedCards.length >= 2) {
-        // maybe: remake this part to allow multi-card validation 
+        console.log(`>= 2 cards picked!`);
         // win pair if matching
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
             // console.log(selectedCards[0].getAttribute('name'));
