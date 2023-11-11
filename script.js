@@ -57,7 +57,7 @@ const flipCard = function(gridID) {
         flipUp(card);
     } else if (card.getAttribute('state') === 'selected') {
         flipDown(card);
-    }
+    } 
     const selectedCards = [...document.querySelectorAll('div[state="selected"')];
     if (selectedCards.length >= 2) {
         // maybe: remake this part to allow multi-card validation 
@@ -70,11 +70,10 @@ const flipCard = function(gridID) {
             })
         }
         const allCards = [...document.querySelectorAll('.card-container')];
-        console.log(allCards);
         allCards.forEach((card) => {
             const cardIndex = card.id.replace('grid', '');
             card.removeEventListener('click', activeSet[cardIndex].flipCard_);
-            console.log(card);
+            setTimeout(updateClickableCards, 1000);
         })
     }
 
