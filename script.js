@@ -33,20 +33,23 @@ const setActiveSet = function(set) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-let flipCard_;
+
 const updateClickableCards = function() {
+    // const allCards = [...document.querySelectorAll('.card-container')]
+    // allCards.forEach((card) => {
+    //     card.removeEventListener('click', () => revealCard(card.id))
+    // })
     const facedownCards = [...document.querySelectorAll('.face-down')]
     facedownCards.forEach((card) => {
-        // named flipCard for removeEventListener() purposes
-        flipCard_ = () =>  {
-            flipCard(card.id)
-        }
-        card.addEventListener('click', flipCard_);
-        card.setAttribute('state', 'dormant');
+            card.addEventListener('click', () => {
+                flipCard(card.id);
+            })
+            card.setAttribute('state', 'dormant');
     })
 }
 const flipCard = function(gridID) {
     // TODO
+    console.log(`clicked`);
     card = document.querySelector(`#${gridID}`);
     if (card.getAttribute('state') === 'dormant') {
         flipUp(card);
@@ -65,12 +68,6 @@ const flipCard = function(gridID) {
                 // console.log(card);
             })
         }
-        const allCards = [...document.querySelectorAll('.card-container')];
-        console.log(allCards);
-        allCards.forEach((card) => {
-            card.removeEventListener('click', flipCard_);
-            console.log(card);
-        })
     }
 
     function flipUp(card) {
