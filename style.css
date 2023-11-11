@@ -75,12 +75,18 @@ img {
     padding: 20%;
 }
 
-.facedown {
-
-}
-
 #scores {
     display: flex;
     flex-flow: row wrap;
-    margin: 5rem auto;
+    margin: 5px auto;
+    width: 100%;
+    height: 9rem;
+}
+.player-box {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 50%;
+    height: auto;
+    margin: auto;
 }
