@@ -11,6 +11,7 @@ class image {
     // maybe: method for moving on screen (difficulty)
 }
 let turnTimeoutValue = 1000;
+const scores = [];
 
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
@@ -61,6 +62,9 @@ const flipCard = function(gridID) {
         // win pair if matching
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
             // win pair
+            selectedCards.forEach((card) => {
+                card.setAttribute('state', 'secured');
+            })
         } else {
             selectedCards.forEach((card) => {
                 setTimeout(() => {flipDown(card)}, turnTimeoutValue);
