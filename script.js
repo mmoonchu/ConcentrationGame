@@ -38,10 +38,6 @@ function getRandomInt(max) {
 }
 
 const updateClickableCards = function() {
-    // const allCards = [...document.querySelectorAll('.card-container')]
-    // allCards.forEach((card) => {
-    //     card.removeEventListener('click', () => revealCard(card.id))
-    // })
     const facedownCards = [...document.querySelectorAll('.face-down')]
     facedownCards.forEach((card) => {
         const cardIndex = card.id.replace('grid', '');
@@ -94,7 +90,6 @@ const removeCardPair = function(cardName) {
 }
 // Function: switch active player
 const switchPlayer = function() {
-    // TODO
     document.querySelector('#p0').classList.toggle('player--active');
     document.querySelector('#p1').classList.toggle('player--active');
 }
@@ -117,7 +112,6 @@ const failCardPair = function() {
 
 // Function: assign images to divs (may not need)
 const createCardFace = function(image) {
-    //TODO
     let cardFaceDiv = document.createElement(`div`);
     cardFaceDiv.classList.add('card-front');
     cardFaceDiv.id = `${image.gridID}`; // could refactor to eliminate gridID within face
@@ -148,7 +142,6 @@ const createBoard = function() {
 }
 // Function: initiate active player's turn
 const setFirstPlayer = function() { // for both beginGame() & resetGame()
-    //TODO
     document.querySelector('#p0').classList.add('player--active');
     document.querySelector('#p1').classList.remove('player--active');
 }
