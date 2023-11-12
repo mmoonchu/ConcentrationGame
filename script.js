@@ -124,16 +124,20 @@ const switchPlayer = function() {
 const checkWin = function () {
     // TODO
     if (![...document.querySelectorAll('div[state="dormant"')][0] && ![...document.querySelectorAll('div[state="selected"')][0]) {
-        if (scores[0] > scores[1]) {
-            document.querySelector('#win-message').textContent = `Player 1 wins!`;
-        } else if (scores[0] < scores[1]) {
-            document.querySelector('#win-message').textContent = `Player 2 wins!`;
+        if (scores[0] !== scores[1]) {
+            determineWinner();
         } else {
             document.querySelector('#win-message').textContent = `It's a tie!`;
         }
         document.querySelector('#win-message').toggleAttribute('hidden');
     }
-    // - textContent: active player wins!
+
+    function determineWinner() {
+        highscore = scores.reduce((acc, cur) => acc > cur ? acc : cur);
+        winner = scores.indexOf(highscore)
+        document.querySelector('#win-message').textContent = `Player ${winner + 1} wins!`;
+        document.querySelector(`#player-${winner}`).classList.add('player--winner');
+    }
 }
 
 
