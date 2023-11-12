@@ -30,6 +30,7 @@ const animals = [
 
 const activeSet = [];
 const setActiveSet = function(set) {
+    activeSet.length = 0;
     let doubledSet = [];
     set.forEach((image) => {
         doubledSet.push(image, Object.assign(Object.create(image), image))
