@@ -184,6 +184,7 @@ const createBoard = function() { // could move above functions into this one
 const setFirstPlayer = function() {
     document.querySelector('#player-0').classList.add('player--active');
     document.querySelector('#player-1').classList.remove('player--active');
+    activePlayer = 0;
     document.querySelector('#player-0').classList.remove('player--winner');
     document.querySelector('#player-1').classList.remove('player--winner');
     document.querySelector(`#score-0`).textContent = scores[0];
