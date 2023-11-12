@@ -131,6 +131,7 @@ const checkWin = function () {
         } else {
             document.querySelector('#win-message').textContent = `It's a tie!`;
         }
+        document.querySelector('#win-message').toggleAttribute('hidden');
     }
     // - textContent: active player wins!
 }
