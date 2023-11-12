@@ -8,6 +8,7 @@ let activePlayer = 0;
 let playing = true;
 
 let turnTimeoutValue = 1000;
+const dontWait = 0;
 
 class image {
     constructor(name, link) {
@@ -69,10 +70,11 @@ const flipCard = function(gridID) {
         // win pair if matching
         if ((selectedCards[0].getAttribute('name') === selectedCards[1].getAttribute('name'))) {
             winCardPair(selectedCards);
+            resetFlipCardListeners(dontWait);
         } else {
             failCardPair(selectedCards);
+            resetFlipCardListeners(turnTimeoutValue);
         }
-        resetFlipCardListeners();
     }
 /////////////////////////////////////////
     function flipUp(card) {
@@ -101,12 +103,12 @@ const flipCard = function(gridID) {
         })
         switchPlayer();
     }
-    function resetFlipCardListeners() {
+    function resetFlipCardListeners(timeout) {
         const allCards = [...document.querySelectorAll('.card-container')];
         allCards.forEach((card) => {
             const cardIndex = card.id.replace('grid', '');
             card.removeEventListener('click', activeSet[cardIndex].flipCard_);
-            setTimeout(updateClickableCards, turnTimeoutValue);
+            setTimeout(updateClickableCards, timeout);
         })
     }
 }
@@ -131,12 +133,16 @@ const checkWin = function () {
         }
         document.querySelector('#win-message').toggleAttribute('hidden');
     }
+    promptPlayAgain();
 
     function determineWinner() {
         highscore = scores.reduce((acc, cur) => acc > cur ? acc : cur);
         winner = scores.indexOf(highscore)
         document.querySelector('#win-message').textContent = `Player ${winner + 1} wins!`;
         document.querySelector(`#player-${winner}`).classList.add('player--winner');
+    }
+    function promptPlayAgain() {
+
     }
 }
 

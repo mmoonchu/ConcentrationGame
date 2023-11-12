@@ -30,7 +30,7 @@ header {
     left: 50%;
     transform: translate(-50%, 0);
     background-color: #181B25;
-    color: #E9F0E4;
+    color: #e6e6e6;
     font-size: 5rem;
     border: 5px solid #994B0B;
     border-radius: 20px;
@@ -48,6 +48,7 @@ header {
 #board {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     margin: auto;
 }
 
@@ -120,10 +121,10 @@ img {
     border-radius: 20px;
     font-size: 2.1rem;
     font-weight: 600;
-    color: #E9F0E4;
+    color: #e6e6e6;
 }
 .player--active {
-    background-color: #E9F0E4;
+    background-color: #e6e6e6;
     color: #181B25;
     font-weight: 660;
 }
