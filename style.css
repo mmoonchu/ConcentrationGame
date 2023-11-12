@@ -38,6 +38,20 @@ header {
     background-color: #181B25;
 }
 
+#menu-button-list {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 4.2rem;
+}
+.menu-button:hover {
+    cursor: pointer;
+}
+.menu-button {
+    background-color: #e6e6e6;
+    font-size: 3.6rem;
+}
+
 #postgame-popup {
     display: flex;
     flex-flow: row wrap;
