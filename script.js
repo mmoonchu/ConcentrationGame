@@ -93,8 +93,6 @@ const flipCard = function(gridID) {
         })
         scores[activePlayer]++;
         document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer]
-        // removeCardPair(cardName);
-        // active player score++
         checkWin();
     }
     function failCardPair(selectedCards) {
@@ -113,18 +111,12 @@ const flipCard = function(gridID) {
     }
 }
 
-// Function: (re)move card pair from pile
-const removeCardPair = function(cardName) {
-    // TODO
-}
 const switchPlayer = function() {
     document.querySelector('#player-0').classList.toggle('player--active');
     document.querySelector('#player-1').classList.toggle('player--active');
     activePlayer = activePlayer === 0 ? 1 : 0;
 }
-// Function: checkWin
 const checkWin = function () {
-    // TODO
     if (![...document.querySelectorAll('div[state="dormant"')][0] && ![...document.querySelectorAll('div[state="selected"')][0]) {
         if (scores[0] !== scores[1]) {
             determineWinner();
@@ -187,12 +179,5 @@ const beginGame = function() {
     setFirstPlayer();
     updateClickableCards();
 }
-// updateClickableCards();
-
-//     Event listener('click'): flip function x2
-//     if (win)
-//         win card pair()
-//     else
-//         fail card pair()
 
 beginGame();
