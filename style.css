@@ -31,6 +31,7 @@ header {
 #postgame-popup {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     margin: auto;
     position: absolute;
     top: 6.3rem;
@@ -47,8 +48,20 @@ header {
     background-color: #75FACE;
     font-weight: 560;
 }
+#win-message {
+    border: 5px solid #181B25;
+    text-shadow:
+      -.8px -.8px 0 #4CA9A9, /* Top-left shadow */
+      .8px -.8px 0 #4CA9A9,  /* Top-right shadow */
+      -2.7px 2.7px 0 #4CA9A9,  /* Bottom-left shadow */
+      .8px .8px 0 #4CA9A9;   /* Bottom-right shadow */
+}
 #play-again {
     border: 5px solid #994B0B;
+    margin-top: 6px;
+}
+#play-again:hover {
+    cursor: pointer;
 }
 .text-outline {
     color: #eeeeee;
