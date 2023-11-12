@@ -28,19 +28,29 @@ header {
     font-size: 4rem;
     margin: .5rem auto;
 }
-#win-message {
+#postgame-popup {
+    display: flex;
+    flex-flow: row wrap;
     margin: auto;
-    padding: 0 20px 10px;
     position: absolute;
     top: 6.3rem;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: #181B25;
-    color: #e6e6e6;
-    font-size: 5rem;
+    color: #181B25;
+    font-size: 4.5rem;
+    z-index: 1;
+}
+#win-message, #playagain {
     border: 5px solid #994B0B;
     border-radius: 20px;
-    z-index: 1;
+    margin: 0 10px;
+    padding: 0 20px 10px;
+}
+#win-message {
+    background-color: #e6e6e6;
+}
+#playagain {
+    background-color: #e6e6e6;
 }
 .text-outline {
     color: #eeeeee;
