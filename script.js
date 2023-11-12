@@ -197,7 +197,7 @@ const beginGame = function() {
     createBoard();
     setFirstPlayer();
     updateClickableCards();
-    document.querySelector('#menu').toggleAttribute('hidden');
+    document.querySelector('#menu').setAttribute('hidden', '');
 }
 
 document.querySelector('#start-game-button').addEventListener('click', beginGame);
