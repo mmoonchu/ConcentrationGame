@@ -135,9 +135,19 @@ const checkWin = function () {
         document.querySelector(`#player-${winner}`).classList.add('player--winner');
     }
 }
+const clearBoard = function() {
+    const allCards = [...document.querySelectorAll('.card-container')];
+    allCards.forEach((card) => {
+        const cardIndex = card.id.replace('grid', '');
+        card.removeEventListener('click', activeSet[cardIndex].flipCard_);
+        card.remove();
+        console.log(`hi`);
+    })
+}
 
 // Add play-again button functionality
 document.querySelector('#play-again').addEventListener('click', () => {
+    clearBoard();
     beginGame();
 })
 
