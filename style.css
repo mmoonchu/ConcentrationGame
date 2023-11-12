@@ -40,7 +40,7 @@ header {
     font-size: 4.5rem;
     z-index: 1;
 }
-#win-message, #playagain {
+#win-message, #play-again {
     border: 5px solid #994B0B;
     border-radius: 20px;
     margin: 0 10px;
@@ -49,7 +49,7 @@ header {
 #win-message {
     background-color: #e6e6e6;
 }
-#playagain {
+#play-again {
     background-color: #e6e6e6;
 }
 .text-outline {

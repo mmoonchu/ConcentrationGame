@@ -125,8 +125,8 @@ const checkWin = function () {
             document.querySelector('#win-message').textContent = `It's a tie!`;
         }
         document.querySelector('#win-message').toggleAttribute('hidden');
+        document.querySelector('#play-again').toggleAttribute('hidden');
     }
-    promptPlayAgain();
 
     function determineWinner() {
         highscore = scores.reduce((acc, cur) => acc > cur ? acc : cur);
@@ -134,11 +134,12 @@ const checkWin = function () {
         document.querySelector('#win-message').textContent = `Player ${winner + 1} wins!`;
         document.querySelector(`#player-${winner}`).classList.add('player--winner');
     }
-    function promptPlayAgain() {
-        
-    }
 }
 
+// Add play-again button functionality
+document.querySelector('#play-again').addEventListener('click', () => {
+    beginGame();
+})
 
 const createCardFace = function(image) {
     let cardFaceDiv = document.createElement(`div`);
