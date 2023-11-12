@@ -150,6 +150,8 @@ const clearBoard = function() {
 document.querySelector('#play-again').addEventListener('click', () => {
     clearBoard();
     beginGame();
+    document.querySelector('#win-message').toggleAttribute('hidden');
+    document.querySelector('#play-again').toggleAttribute('hidden');
 })
 
 const createCardFace = function(image) {
