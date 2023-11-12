@@ -28,6 +28,16 @@ header {
     font-size: 4rem;
     margin: .5rem auto;
 }
+
+#menu {
+    z-index: 1;
+    position: absolute;
+    top: 5rem;
+    height: calc(100% - 4.5rem);
+    width: 100%;
+    background-color: #181B25;
+}
+
 #postgame-popup {
     display: flex;
     flex-flow: row wrap;
