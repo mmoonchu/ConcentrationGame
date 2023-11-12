@@ -184,11 +184,16 @@ const createBoard = function() { // could move above functions into this one
 const setFirstPlayer = function() {
     document.querySelector('#player-0').classList.add('player--active');
     document.querySelector('#player-1').classList.remove('player--active');
+    document.querySelector('#player-0').classList.remove('player--winner');
+    document.querySelector('#player-1').classList.remove('player--winner');
+    document.querySelector(`#score-0`).textContent = scores[0];
+    document.querySelector(`#score-1`).textContent = scores[1];
 }
 
 ////////////////////////////////////////////
 // BEGIN:
 const beginGame = function() {
+    scores.fill(0);
     setActiveSet(animals);
     createBoard();
     setFirstPlayer();
