@@ -90,6 +90,7 @@ const flipCard = function(gridID) {
     function winCardPair(selectedCards) {
         selectedCards.forEach((card) => {
             card.setAttribute('state', 'secured');
+            card.querySelector('.card').classList.add(`border-${activePlayer}`)
         })
         scores[activePlayer]++;
         document.querySelector(`#score-${activePlayer}`).textContent = scores[activePlayer]
