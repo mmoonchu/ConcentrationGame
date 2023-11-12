@@ -163,6 +163,7 @@ img {
     border: 5px solid var(--player-1-border);
 }
 
-.player--winner {
+#player-0.player--winner, #player-0.player--winner {
     background-color: #75FACE;
+    color: #181B25;
 }
