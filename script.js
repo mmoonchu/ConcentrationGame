@@ -62,9 +62,7 @@ const flipCard = function(gridID) {
     card = document.querySelector(`#${gridID}`);
     if (card.getAttribute('state') === 'dormant') {
         flipUp(card);
-    } else if (card.getAttribute('state') === 'selected') {
-        flipDown(card);
-    } 
+    }
     const selectedCards = [...document.querySelectorAll('div[state="selected"')];
     if (selectedCards.length >= 2) {
         // maybe: remake this part to allow multi-card validation 
