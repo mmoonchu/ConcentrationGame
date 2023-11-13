@@ -29,7 +29,8 @@ class cardSet {
 
     constructor(name, arrOfImages) {
         this.name = name;
-        this.arrOfImages = arrOfImages; 
+        this.arrOfImages = arrOfImages;
+        this.setID = cardSet.cardSets.length;
         // this.setThumbnail = setThumbnail;
 
         cardSet.cardSets.push(this);
@@ -58,9 +59,15 @@ const animalsHard = new cardSet('Animals+<br>9 pairs', animals2);
 
 const activeSet = [];
 const setActiveSet = function(set) {
+    [...document.querySelectorAll('.card-set')].forEach((card) => {
+        card.classList.remove('active-set');
+    })
+    document.querySelector(`#set${set.setID}`).classList.add('active-set')
+
+    imageSet = set.arrOfImages;
     activeSet.length = 0;
     let doubledSet = [];
-    set.forEach((image) => {
+    imageSet.forEach((image) => {
         doubledSet.push(image, Object.assign(Object.create(image), image))
     })
     for (let i = 0, j = doubledSet.length; i < j; i++) {
@@ -76,9 +83,10 @@ const setActiveSet = function(set) {
 
 cardSet.cardSets.forEach((cardSet) => {
     let set = document.createElement(`div`);
-        set.classList.add('cardSet');
+        set.id = `set${cardSet.setID}`;
+        set.classList.add('card-set');
         set.addEventListener('click', () => {
-            setActiveSet(cardSet.arrOfImages);
+            setActiveSet(cardSet);
         })
     let setThumbnail = document.createElement('img');
         setThumbnail.classList.add('thumbnail'); // TODO: move img from CSS to JS, make dynamic to set
@@ -238,7 +246,7 @@ const setFirstPlayer = function() {
 
 ////////////////////////////////////////////
 // BEGIN:
-setActiveSet(animals);
+setActiveSet(animalsEasy);
 const beginGame = function() {
     scores.fill(0);
     createBoard();

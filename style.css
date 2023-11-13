@@ -94,7 +94,7 @@ header {
     padding-bottom: 8rem;
     color: white;
 }
-.cardSet {
+.card-set {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -108,6 +108,9 @@ header {
     flex-flow: column nowrap;
     align-items: center;
 } */
+.active-set {
+    border: 10px solid #F4B860;
+}
 
 #postgame-popup {
     display: flex;
