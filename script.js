@@ -25,7 +25,12 @@ const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
     new image('lion', '/image-sets/animals/lion.jpg'),
     new image('monkey', '/image-sets/animals/monkey.jpg'),
-    new image('penguin', '/image-sets/animals/penguin.png')
+    new image('penguin', '/image-sets/animals/penguin.png'),
+    new image('duck', '/image-sets/animals/duck.jpg'),
+    new image('elephant', '/image-sets/animals/elephant.jpg'),
+    new image('panda', '/image-sets/animals/panda.jpg'),
+    new image('snake', '/image-sets/animals/snake.jpg'),
+    new image('toucan', '/image-sets/animals/toucan.jpg')
 ];
 const animals2 = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
