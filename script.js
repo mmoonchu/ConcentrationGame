@@ -266,3 +266,8 @@ document.querySelector('header').addEventListener('click', () => {
         modal.setAttribute('hidden', '');
     })
 })
+document.querySelector('#close-modal-button').addEventListener('click', () => {
+    [...document.querySelectorAll('.modal-container')].forEach((modal) => {
+        modal.setAttribute('hidden', '');
+    })
+})

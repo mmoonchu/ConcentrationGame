@@ -76,6 +76,8 @@ header {
     height: calc(100vh - 5rem);
 }
 .modal {
+    display: flex;
+    flex-flow: column nowrap;
     box-sizing: border-box;
     border-radius: 50px;
     border: 10px solid #F4B860;
@@ -84,6 +86,20 @@ header {
     height: 100%;
     max-height: 72vh;
     background-color: #181B25;
+}
+#close-modal-button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: auto;
+    padding: 0 40px;
+}
+#close-modal-button {
+    right: 5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FC5736;
+    cursor: pointer;
 }
 
 #sets-menu {
