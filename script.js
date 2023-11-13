@@ -27,6 +27,12 @@ const animals = [
     new image('monkey', '/image-sets/animals/monkey.jpg'),
     new image('penguin', '/image-sets/animals/penguin.png')
 ];
+const animals2 = [
+    new image('giraffe', '/image-sets/animals/giraffe.jpg'),
+    new image('lion', '/image-sets/animals/lion.jpg'),
+    new image('monkey', '/image-sets/animals/monkey.jpg'),
+    new image('penguin', '/image-sets/animals/penguin.png')
+];
 
 const activeSet = [];
 const setActiveSet = function(set) {

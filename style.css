@@ -42,8 +42,9 @@ header {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    justify-content: space-between;
-    padding: 2.2rem;
+    justify-content: space-around;
+    padding: 4.2rem;
+    height: 80%;
 }
 .menu-button:hover {
     cursor: pointer;
@@ -51,11 +52,16 @@ header {
 .menu-button {
     border-radius: 20px;
     border: 5px solid #4CA9A9;
-    margin: 2rem;
+    /* margin: 2rem; */
     padding: 0 22px 8px;
     background-color: #e6e6e6;
     font-size: 3rem;
     font-weight: 500;
+    text-shadow:
+      -.6px -.6px 0 #80C6C6, /* Top-left shadow */
+      .6px -.6px 0 #80C6C6,  /* Top-right shadow */
+      -2px 2px 0 #80C6C6,  /* Bottom-left shadow */
+      .6px .6px 0 #80C6C6;   /* Bottom-right shadow */
 }
 
 #postgame-popup {
