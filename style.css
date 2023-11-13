@@ -89,12 +89,25 @@ header {
 #sets-menu {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8rem;
     color: white;
 }
 .cardSet {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
     width: 100px;
     height: 100px;
+    margin: 30px;
+    cursor: pointer;
 }
+/* .set-name {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+} */
 
 #postgame-popup {
     display: flex;

@@ -76,7 +76,7 @@ const setActiveSet = function(set) {
 
 cardSet.cardSets.forEach((cardSet) => {
     let set = document.createElement(`div`);
-        set.classList.add('cardSet'); // TODO (?)
+        set.classList.add('cardSet');
         set.addEventListener('click', () => {
             setActiveSet(cardSet.arrOfImages);
         })
@@ -84,6 +84,7 @@ cardSet.cardSets.forEach((cardSet) => {
         setThumbnail.classList.add('thumbnail'); // TODO: move img from CSS to JS, make dynamic to set
         setThumbnail.setAttribute('src', '/image-sets/animals/cardback-zoo.png');
     let setName = document.createElement('p');
+        setName.classList.add('set-name');
         setName.innerHTML = `${cardSet.name}`;
     set.append(setThumbnail);
     set.append(setName);
