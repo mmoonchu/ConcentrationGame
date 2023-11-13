@@ -77,4 +77,4 @@ add event listeners to cards
     flip back down after 2
 
 laaater (but before stretch) (like bugfixes):
-updateClickableCards(): should also toggle off clickability for faceup cards
+updateClickableCards(): should also toggle off clickability for faceup cards **DONE**

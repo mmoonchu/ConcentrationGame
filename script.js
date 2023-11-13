@@ -7,7 +7,7 @@ const scores = [0, 0];
 let activePlayer = 0;
 let playing = true;
 
-let turnTimeoutValue = 1000;
+let turnTimeoutValue = 950;
 const dontWait = 0;
 
 class image {
@@ -21,6 +21,19 @@ class image {
     }
     // maybe: method for moving on screen (difficulty)
 }
+class cardSet {
+    static cardSets = [];
+
+    constructor(name, arrOfImages) {
+        this.name = name;
+        this.arrOfImages = arrOfImages; 
+        // this.setThumbnail = setThumbnail;
+
+        cardSet.cardSets.push(this);
+    }
+}
+const animalsEasy = new cardSet('Animals', animals);
+const animalsHard = new cardSet('Animals+<br>5 more pairs!', animals2);
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
     new image('lion', '/image-sets/animals/lion.jpg'),
