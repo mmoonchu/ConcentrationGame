@@ -229,5 +229,5 @@ document.querySelector('#start-game-button').addEventListener('click', beginGame
 
 document.querySelector('#select-set-button').addEventListener('click', openSetsMenu);
 function openSetsMenu()  {
-    document.querySelector('#sets-menu').removeAttribute('hidden');
+    document.querySelector('#sets-menu-container').removeAttribute('hidden');
 }

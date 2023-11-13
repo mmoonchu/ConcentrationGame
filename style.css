@@ -64,10 +64,20 @@ header {
       .6px .6px 0 #80C6C6;   /* Bottom-right shadow */
 }
 
-.modal {
+.modal-container {
     z-index: 2;
+    position: absolute;
+    top: 5rem;
+    padding: 4rem 3rem;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+}
+.modal {
+    box-sizing: border-box;
     border-radius: 20px;
     border: 10px solid #F4B860;
+    width: 100%;
+    height: 100%;
     background-color: #181B25;
 }
 
