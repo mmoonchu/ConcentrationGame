@@ -32,8 +32,7 @@ class cardSet {
         cardSet.cardSets.push(this);
     }
 }
-const animalsEasy = new cardSet('Animals', animals);
-const animalsHard = new cardSet('Animals+<br>5 more pairs!', animals2);
+
 const animals = [
     new image('giraffe', '/image-sets/animals/giraffe.jpg'),
     new image('lion', '/image-sets/animals/lion.jpg'),
@@ -51,6 +50,8 @@ const animals2 = [
     new image('snake', '/image-sets/animals/snake.jpg'),
     new image('toucan', '/image-sets/animals/toucan.jpg')
 ];
+const animalsEasy = new cardSet('Animals', animals);
+const animalsHard = new cardSet('Animals+<br>5 more pairs!', animals2);
 
 const activeSet = [];
 const setActiveSet = function(set) {
@@ -215,9 +216,9 @@ const setFirstPlayer = function() {
 
 ////////////////////////////////////////////
 // BEGIN:
+setActiveSet(animals);
 const beginGame = function() {
     scores.fill(0);
-    setActiveSet(animals);
     createBoard();
     setFirstPlayer();
     updateClickableCards();
@@ -225,3 +226,8 @@ const beginGame = function() {
 }
 
 document.querySelector('#start-game-button').addEventListener('click', beginGame);
+
+document.querySelector('#select-set-button').addEventListener('click', openSetsMenu);
+function openSetsMenu()  {
+    document.querySelector('#sets-menu').removeAttribute('hidden');
+}

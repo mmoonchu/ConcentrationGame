@@ -64,6 +64,13 @@ header {
       .6px .6px 0 #80C6C6;   /* Bottom-right shadow */
 }
 
+.modal {
+    z-index: 2;
+    border-radius: 20px;
+    border: 10px solid #F4B860;
+    background-color: #181B25;
+}
+
 #postgame-popup {
     display: flex;
     flex-flow: row wrap;
