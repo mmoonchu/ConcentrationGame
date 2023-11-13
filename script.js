@@ -2,6 +2,7 @@ const player0El = document.querySelector('#player-0');
 const player1El = document.querySelector('#player-1');
 const score0El = document.querySelector('#score-0');
 const score1El = document.querySelector('#score-1');
+const setsMenuEl = document.querySelector('#sets-menu');
 
 const scores = [0, 0];
 let activePlayer = 0;
@@ -10,6 +11,8 @@ let playing = true;
 let turnTimeoutValue = 950;
 const dontWait = 0;
 
+////////////////////////////////////////
+// Card Sets
 class image {
     constructor(name, link) {
         this.name = name,
@@ -71,6 +74,24 @@ const setActiveSet = function(set) {
     return activeSet;
 }
 
+cardSet.cardSets.forEach((cardSet) => {
+    let set = document.createElement(`div`);
+        set.classList.add('cardSet'); // TODO (?)
+        set.addEventListener('click', () => {
+            setActiveSet(cardSet.arrOfImages);
+        })
+    let setThumbnail = document.createElement('img');
+        setThumbnail.classList.add('thumbnail'); // TODO: move img from CSS to JS, make dynamic to set
+        setThumbnail.setAttribute('src', '/image-sets/animals/cardback-zoo.png');
+    let setName = document.createElement('p');
+        setName.innerText = `${cardSet.name}`;
+    set.append(setThumbnail);
+    set.append(setName);
+    document.querySelector('#sets-menu').append(set);
+})
+
+//////////////////////////////////////////
+// Main Game
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -231,3 +252,8 @@ document.querySelector('#select-set-button').addEventListener('click', openSetsM
 function openSetsMenu()  {
     document.querySelector('#sets-menu-container').removeAttribute('hidden');
 }
+document.querySelector('header').addEventListener('click', () => {
+    [...document.querySelectorAll('.modal-container')].forEach((modal) => {
+        modal.setAttribute('hidden', '');
+    })
+})

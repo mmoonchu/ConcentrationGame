@@ -27,6 +27,7 @@ header {
     font-weight: 600;
     font-size: 4rem;
     margin: .5rem auto;
+    cursor: pointer;
 }
 
 #menu {
@@ -83,6 +84,16 @@ header {
     height: 100%;
     max-height: 72vh;
     background-color: #181B25;
+}
+
+#sets-menu {
+    display: flex;
+    flex-flow: row wrap;
+    color: white;
+}
+.cardSet {
+    width: 100px;
+    height: 100px;
 }
 
 #postgame-popup {
@@ -235,4 +246,8 @@ img {
     background-color: #75FACE;
     color: #181B25;
     font-weight: 660;
+}
+
+[hidden] {
+    display: none;
 }
