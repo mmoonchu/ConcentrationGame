@@ -66,6 +66,8 @@ header {
 
 .modal-container {
     z-index: 2;
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 5rem;
     padding: 4rem 3rem;
@@ -77,6 +79,7 @@ header {
     border-radius: 20px;
     border: 10px solid #F4B860;
     width: 100%;
+    max-width: 63vw;
     height: 100%;
     background-color: #181B25;
 }
