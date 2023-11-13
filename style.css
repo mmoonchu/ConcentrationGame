@@ -77,7 +77,7 @@ header {
 }
 .modal {
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 10px solid #F4B860;
     width: 100%;
     max-width: 63vw;
@@ -92,15 +92,19 @@ header {
     justify-content: center;
     align-items: center;
     padding-bottom: 8rem;
-    color: white;
+    color: #e6e6e6;
 }
 .card-set {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    box-sizing: border-box;
     width: 100px;
-    height: 100px;
+    height: auto;
     margin: 30px;
+    border: 5px solid #181B25;
+    border-radius: 10px;
+    padding: 5px;
     cursor: pointer;
 }
 /* .set-name {
@@ -109,7 +113,7 @@ header {
     align-items: center;
 } */
 .active-set {
-    border: 10px solid #F4B860;
+    border: 5px solid #e6e6e6;
 }
 
 #postgame-popup {
