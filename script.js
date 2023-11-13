@@ -53,8 +53,8 @@ const animals2 = [
     new image('snake', '/image-sets/animals/snake.jpg'),
     new image('toucan', '/image-sets/animals/toucan.jpg')
 ];
-const animalsEasy = new cardSet('Animals', animals);
-const animalsHard = new cardSet('Animals+<br>5 more pairs!', animals2);
+const animalsEasy = new cardSet('Animals<br>4 pairs', animals);
+const animalsHard = new cardSet('Animals+<br>9 pairs', animals2);
 
 const activeSet = [];
 const setActiveSet = function(set) {
@@ -84,7 +84,7 @@ cardSet.cardSets.forEach((cardSet) => {
         setThumbnail.classList.add('thumbnail'); // TODO: move img from CSS to JS, make dynamic to set
         setThumbnail.setAttribute('src', '/image-sets/animals/cardback-zoo.png');
     let setName = document.createElement('p');
-        setName.innerText = `${cardSet.name}`;
+        setName.innerHTML = `${cardSet.name}`;
     set.append(setThumbnail);
     set.append(setName);
     document.querySelector('#sets-menu').append(set);
