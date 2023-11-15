@@ -1,5 +1,5 @@
 # Concentration
-### Play the classic game in which 2 players compete to memorize and claim more card pairs than the other player!
+### Play the classic game in which 2 players each compete to memorize and claim more card pairs than the other!
 
 ![alt text](https://i.gyazo.com/827757eb9b0e6cd665d7476425904738.png)
 
