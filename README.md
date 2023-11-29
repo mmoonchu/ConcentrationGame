@@ -7,4 +7,4 @@ Click on a card to select/deselect it. When two cards are selected, the game wil
 
 Click on "Sets" in the main menu to play with different cards! (currently only 2 sets available)
 
-*HTML/CSS/JS*
+*HTML / CSS / JS*
