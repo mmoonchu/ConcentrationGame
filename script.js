@@ -265,6 +265,8 @@ document.querySelector('header').addEventListener('click', () => {
     [...document.querySelectorAll('.modal-container')].forEach((modal) => {
         modal.setAttribute('hidden', '');
     })
+    document.querySelector('#menu').removeAttribute('hidden');
+    clearBoard();
 })
 document.querySelector('#close-modal-button').addEventListener('click', () => {
     [...document.querySelectorAll('.modal-container')].forEach((modal) => {
