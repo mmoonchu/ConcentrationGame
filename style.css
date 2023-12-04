@@ -138,7 +138,7 @@ header {
     justify-content: center;
     margin: auto;
     position: absolute;
-    top: 6.3rem;
+    top: 7.2rem;
     left: 50%;
     transform: translate(-50%, 0);
     color: #181B25;
@@ -154,16 +154,11 @@ header {
 }
 #win-message {
     /* outline: 2px solid white; */
-    border: 5px solid #181b25cb;
-    text-shadow:
-    -.8px -.8px 0 white, /* Top-left shadow */
-    .8px -.8px 0 white,  /* Top-right shadow */
-    -2.7px 2.7px 0 white,  /* Bottom-left shadow */
-    .8px .8px 0 white;   /* Bottom-right shadow */
+    border: 5px solid #66ddb6;
 }
 #play-again {
     /* outline: 2px solid white; */
-    border: 5px solid #181b25cb;
+    border: 5px solid #4EF9C0;
     margin-top: 6px;
 }
 #play-again:hover {
@@ -281,7 +276,7 @@ img {
 }
 
 #player-0.player--winner, #player-1.player--winner {
-    outline: 5px solid #75FACE;
+    outline: 5px solid #4EF9C0;
     color: #181B25;
     font-weight: 660;
 }
@@ -289,3 +284,10 @@ img {
 [hidden] {
     display: none;
 }
+
+
+/* text-shadow:
+-.8px -.8px 0 white,
+.8px -.8px 0 white,
+-2.7px 2.7px 0 white, 
+.8px .8px 0 white;  */
