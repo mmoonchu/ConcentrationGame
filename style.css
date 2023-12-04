@@ -149,19 +149,21 @@ header {
     border-radius: 20px;
     margin: 0 10px;
     padding: 0 22px 8px;
-    background-color: #75FACE;
+    background-color: white;
     font-weight: 560;
 }
 #win-message {
-    border: 5px solid #181B25;
+    /* outline: 2px solid white; */
+    border: 5px solid #181b25cb;
     text-shadow:
-      -.8px -.8px 0 #4CA9A9, /* Top-left shadow */
-      .8px -.8px 0 #4CA9A9,  /* Top-right shadow */
-      -2.7px 2.7px 0 #4CA9A9,  /* Bottom-left shadow */
-      .8px .8px 0 #4CA9A9;   /* Bottom-right shadow */
+    -.8px -.8px 0 white, /* Top-left shadow */
+    .8px -.8px 0 white,  /* Top-right shadow */
+    -2.7px 2.7px 0 white,  /* Bottom-left shadow */
+    .8px .8px 0 white;   /* Bottom-right shadow */
 }
 #play-again {
-    border: 5px solid #994B0B;
+    /* outline: 2px solid white; */
+    border: 5px solid #181b25cb;
     margin-top: 6px;
 }
 #play-again:hover {
@@ -279,7 +281,7 @@ img {
 }
 
 #player-0.player--winner, #player-1.player--winner {
-    background-color: #75FACE;
+    outline: 5px solid #75FACE;
     color: #181B25;
     font-weight: 660;
 }
