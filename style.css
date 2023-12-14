@@ -47,9 +47,6 @@ header {
     padding: 4.2rem;
     height: 80%;
 }
-.menu-button:hover {
-    cursor: pointer;
-}
 .menu-button {
     border-radius: 20px;
     border: 5px solid #4CA9A9;
@@ -63,6 +60,10 @@ header {
       .6px -.6px 0 #80C6C6,  /* Top-right shadow */
       -2px 2px 0 #80C6C6,  /* Bottom-left shadow */
       .6px .6px 0 #80C6C6;   /* Bottom-right shadow */
+}
+.menu-button:hover {
+    cursor: pointer;
+    background-color: #d4d4d4;
 }
 
 .modal-container {

@@ -195,7 +195,6 @@ const clearBoard = function() {
         const cardIndex = card.id.replace('grid', '');
         card.removeEventListener('click', activeSet[cardIndex].flipCard_);
         card.remove();
-        console.log(`hi`);
     })
 }
 
