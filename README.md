@@ -7,6 +7,6 @@ Click on a card to select it. When two cards are selected, the game will check i
 
 Click on "Sets" in the main menu to play with different cards! (currently only 2 sets available)
 
-[Click here to play!](moonchu-concentration.netlify.app)
+[Click here to play!](https://moonchu-concentration.netlify.app)
 
 *HTML / CSS / JS*
